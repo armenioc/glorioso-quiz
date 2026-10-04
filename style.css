@@ -278,3 +278,11 @@ body{padding-bottom:104px}.hero,.hub,.result,.difficultyPick{padding-bottom:105p
 .recoveryScreen h1{font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(42px,10vw,72px);line-height:.95;margin:0}
 .recoveryScreen p{color:#aaa;line-height:1.6}
 .recoveryScreen small{color:#666;letter-spacing:1px}
+
+/* V4.35 — acabamento, acessibilidade e manual */
+.howToPlay{margin:22px 0;padding:20px;border:1px solid rgba(216,179,76,.35);border-radius:18px;background:linear-gradient(135deg,rgba(216,179,76,.08),rgba(255,255,255,.02));display:flex;gap:16px;align-items:center;justify-content:space-between}
+.howToPlay div{display:flex;flex-direction:column;gap:6px}.howToPlay b{color:#d8b34c;letter-spacing:1px}.howToPlay span{color:#999;line-height:1.45;font-size:14px}.howToPlay button{flex:0 0 auto}
+.rulesModal{max-width:560px}.rulesList{display:grid;gap:10px;margin:18px 0}.rulesList article{padding:14px 16px;border:1px solid #2a2a2a;border-radius:12px;background:#0d0d0d;display:flex;flex-direction:column;gap:5px;text-align:left}.rulesList b{color:#d8b34c;font-size:13px;letter-spacing:.5px}.rulesList span{color:#aaa;line-height:1.45;font-size:14px}
+button:focus-visible,input:focus-visible{outline:2px solid #e1bc50;outline-offset:3px}
+@media(max-width:520px){.howToPlay{align-items:stretch;flex-direction:column}.howToPlay button{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
