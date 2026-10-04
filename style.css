@@ -279,7 +279,7 @@ body{padding-bottom:104px}.hero,.hub,.result,.difficultyPick{padding-bottom:105p
 .recoveryScreen p{color:#aaa;line-height:1.6}
 .recoveryScreen small{color:#666;letter-spacing:1px}
 
-/* V4.41 — acabamento, acessibilidade e manual */
+/* V4.42 — acabamento, acessibilidade e manual */
 .howToPlay{margin:22px 0;padding:20px;border:1px solid rgba(216,179,76,.35);border-radius:18px;background:linear-gradient(135deg,rgba(216,179,76,.08),rgba(255,255,255,.02));display:flex;gap:16px;align-items:center;justify-content:space-between}
 .howToPlay div{display:flex;flex-direction:column;gap:6px}.howToPlay b{color:#d8b34c;letter-spacing:1px}.howToPlay span{color:#999;line-height:1.45;font-size:14px}.howToPlay button{flex:0 0 auto}
 .rulesModal{max-width:560px}.rulesList{display:grid;gap:10px;margin:18px 0}.rulesList article{padding:14px 16px;border:1px solid #2a2a2a;border-radius:12px;background:#0d0d0d;display:flex;flex-direction:column;gap:5px;text-align:left}.rulesList b{color:#d8b34c;font-size:13px;letter-spacing:.5px}.rulesList span{color:#aaa;line-height:1.45;font-size:14px}
@@ -287,7 +287,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #e1bc50;outline-offse
 @media(max-width:520px){.howToPlay{align-items:stretch;flex-direction:column}.howToPlay button{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-/* V4.41 — painel de economia e guia de recompensas */
+/* V4.42 — painel de economia e guia de recompensas */
 .economyPanel{margin:18px 0;padding:22px;border:1px solid rgba(214,177,74,.38);border-radius:22px;background:linear-gradient(145deg,rgba(214,177,74,.08),rgba(255,255,255,.02))}
 .economyPanel h2{margin:8px 0 16px;font-family:Impact,'Arial Narrow',sans-serif;letter-spacing:1px}
 .economyStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -296,7 +296,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #e1bc50;outline-offse
 .rewardGuide{margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.28);color:#aaa}
 .rewardGuide summary{cursor:pointer;color:#d9b95b;font-weight:800;font-size:12px;letter-spacing:.7px}.rewardGuide p{line-height:1.55}
 
-/* V4.41 — refinamento seguro de acessibilidade e interação */
+/* V4.42 — refinamento seguro de acessibilidade e interação */
 button,[role="button"],a,.navItem{touch-action:manipulation}
 button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 @media (prefers-reduced-motion:reduce){
