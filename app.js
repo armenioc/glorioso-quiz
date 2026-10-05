@@ -131,11 +131,12 @@ const app=document.querySelector('#app'),save=()=>localStorage.setItem('glorioso
 addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e}); addEventListener('appinstalled',()=>deferred=null);
 function tone(freq=440,dur=.09,type='sine',vol=.035){if(!p.sound)return;try{let A=window.AudioContext||window.webkitAudioContext,c=tone.ctx||(tone.ctx=new A()),o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(vol,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+dur);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+dur)}catch(e){}}
 function sfx(kind){if(!p.sound)return;if(kind==='ok'){tone(660,.08,'sine');setTimeout(()=>tone(880,.12,'sine'),70)}else if(kind==='no'){tone(190,.16,'sawtooth',.025)}else if(kind==='streak'){tone(880,.08);setTimeout(()=>tone(1100,.1),60)}else if(kind==='perfect'){[660,880,1100,1320].forEach((f,n)=>setTimeout(()=>tone(f,.16,'sine',.04),n*85))}}
-function header(){return `<div class="noise"></div><header><div class="brand"><span class="crest">★</span><div><b>GLORIOSO</b><small>QUIZ <em class="versionBadge">V4.44</em></small></div></div><div class="hud"><span>🪙 ${p.coins}</span><span>⭐ ${p.stars}</span><button id="profile" class="${equipClass()}">${avatarSVG(p.avatar,true)} ${p.name}</button></div></header>`}
+function header(){return `<div class="noise"></div><header><div class="brand"><span class="crest">★</span><div><b>GLORIOSO</b><small>QUIZ <em class="versionBadge">V4.45</em></small></div></div><div class="hud"><span>🪙 ${p.coins}</span><span>⭐ ${p.stars}</span><button id="profile" class="${equipClass()}">${avatarSVG(p.avatar,true)} ${p.name}</button></div></header>`}
 
 function dateKey(d=new Date()){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function yesterdayKey(){let d=new Date();d.setDate(d.getDate()-1);return dateKey(d)}
 p.xp=Math.max(0,Number(p.xp)||0);p.coins=Math.max(0,Number(p.coins)||0);p.stars=Math.max(0,Number(p.stars)||0);save();
+p.games=Math.max(0,Number(p.games)||0);p.correct=Math.max(0,Number(p.correct)||0);p.totalAnswered=Math.max(p.correct,Number(p.totalAnswered)||0);p.perfectGames=Math.max(0,Number(p.perfectGames)||0);save();
 function accuracy(){let answered=p.totalAnswered||p.games*10;return answered?Math.min(100,Math.round((p.totalCorrect/answered)*100)):0}
 function favoriteDifficulty(){let e=Object.entries(p.difficultyGames||{}).sort((a,b)=>b[1]-a[1]);return e.length?e[0][0]:'—'}
 function statsPanel(){return `<div class="v43Panel"><div class="v43Title"><span>📊 ESTATÍSTICAS</span><small>SUA CARREIRA ALVINEGRA</small></div><div class="v43Stats"><span><b>${p.games}</b><small>PARTIDAS</small></span><span><b>${accuracy()}%</b><small>APROVEITAMENTO</small></span><span><b>${p.bestStreak}</b><small>MAIOR SEQUÊNCIA</small></span><span><b>${favoriteDifficulty()}</b><small>MAIS JOGADO</small></span></div></div>`}
@@ -306,7 +307,7 @@ function bootGlorioso(){
   catch(err){
     console.error('Falha ao iniciar Glorioso Quiz:',err);
     const root=document.querySelector('#app');
-    if(root)root.innerHTML=`<section class="recoveryScreen"><span class="eyebrow">★ MODO DE RECUPERAÇÃO</span><h1>VAMOS RECUPERAR O JOGO</h1><p>O Glorioso Quiz encontrou uma falha ao carregar. Seu progresso continua salvo neste navegador.</p><button class="primary" id="retryBoot">TENTAR NOVAMENTE</button><button class="secondary" id="safeReset">RECARREGAR INTERFACE</button><small>V4.44 • proteção contra tela preta</small></section>`;
+    if(root)root.innerHTML=`<section class="recoveryScreen"><span class="eyebrow">★ MODO DE RECUPERAÇÃO</span><h1>VAMOS RECUPERAR O JOGO</h1><p>O Glorioso Quiz encontrou uma falha ao carregar. Seu progresso continua salvo neste navegador.</p><button class="primary" id="retryBoot">TENTAR NOVAMENTE</button><button class="secondary" id="safeReset">RECARREGAR INTERFACE</button><small>V4.45 • proteção contra tela preta</small></section>`;
     const retry=document.querySelector('#retryBoot'); if(retry)retry.onclick=()=>location.reload();
     const safe=document.querySelector('#safeReset'); if(safe)safe.onclick=()=>{try{localStorage.removeItem('gloriosoRuntimeCache')}catch(e){} location.reload()};
   }
