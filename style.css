@@ -304,3 +304,11 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 }
 
 .recoveryDirect{width:100%;border-color:#d3af52!important;color:#d3af52!important}.profileActions .recoveryDirect{grid-column:1/-1}
+
+/* V4.62 — celebration mobile isolation */
+.levelCelebration{position:fixed!important;inset:0!important;isolation:isolate;overflow:hidden;overscroll-behavior:contain;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:max(20px,env(safe-area-inset-top)) 18px max(20px,env(safe-area-inset-bottom));box-sizing:border-box}
+.levelCelebration .confetti{position:absolute!important;inset:0!important;z-index:0;overflow:hidden;contain:paint;pointer-events:none}
+.levelCelebration .celebrateCard{z-index:1;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;flex-shrink:1}
+.levelCelebration .confetti i:nth-child(n+15){display:none}
+@media(prefers-reduced-motion:reduce){.levelCelebration,.levelCelebration .celebrateCard,.levelCelebration .confetti i{animation:none!important}}
+@media(max-width:400px){.levelCelebration .celebrateCard{padding:25px 16px 20px}.levelCelebration .celebrateCard h2{font-size:26px}}
