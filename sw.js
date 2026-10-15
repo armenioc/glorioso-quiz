@@ -1,5 +1,5 @@
-const CACHE='glorioso-v462-20261015';
-const ASSETS=['/','/index.html','/style.css?v=462','/app.js?v=462','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png'];
+const CACHE='glorioso-v463-20261015';
+const ASSETS=['/','/index.html','/style.css?v=463','/app.js?v=463','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('glorioso-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
