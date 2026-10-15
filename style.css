@@ -327,3 +327,13 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .legendMilestones span:not(.done){opacity:.8}
 .legendTarget{border-color:#7294ae}
 @media(max-width:650px){.journeyLegend{gap:8px;flex-wrap:wrap}.journeyLegend span:last-child{line-height:1.5}.levelRewardGrid article button{min-height:44px}}
+
+/* V4.67: leitura do progresso dos trofeus, sem alterar dados */
+.trophySummary{margin:14px 0 18px;padding:14px 15px;border:1px solid #56482d;border-radius:14px;background:linear-gradient(120deg,#1a1812,#101010)}
+.trophySummaryLine{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px;color:#d7b85f}
+.trophySummaryLine span{font-size:11px;color:#b4b0a7}
+.trophySummaryBar{height:7px;margin-top:12px;border-radius:99px;background:#303030;overflow:hidden}
+.trophySummaryBar i{display:block;height:100%;background:linear-gradient(90deg,#b28a30,#efd37d);border-radius:99px}
+.trophyGrid article.on{border-color:#8a7037;background:linear-gradient(145deg,#201b12,#101010)}
+.trophyGrid article:not(.on){opacity:.76}
+@media(max-width:390px){.trophySummaryLine{flex-wrap:wrap}}
