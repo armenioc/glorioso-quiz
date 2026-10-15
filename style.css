@@ -312,3 +312,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .levelCelebration .confetti i:nth-child(n+15){display:none}
 @media(prefers-reduced-motion:reduce){.levelCelebration,.levelCelebration .celebrateCard,.levelCelebration .confetti i{animation:none!important}}
 @media(max-width:400px){.levelCelebration .celebrateCard{padding:25px 16px 20px}.levelCelebration .celebrateCard h2{font-size:26px}}
+
+/* V4.65: próximo grande marco da jornada Lenda */
+.legendTarget{margin-top:13px;padding:13px 14px;border:1px solid #526b80;border-radius:12px;background:linear-gradient(120deg,#14212c,#0b1015);display:flex;flex-direction:column;gap:5px}.legendTarget b{font-size:10px;letter-spacing:1.3px;color:#b4d9f3}.legendTarget span{font-size:17px;font-weight:800;color:#f0f8ff}.legendTarget small{font-size:11px;color:#a5bbca;line-height:1.45}
