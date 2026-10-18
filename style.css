@@ -337,3 +337,6 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .trophyGrid article.on{border-color:#8a7037;background:linear-gradient(145deg,#201b12,#101010)}
 .trophyGrid article:not(.on){opacity:.76}
 @media(max-width:390px){.trophySummaryLine{flex-wrap:wrap}}
+
+/* V4.68: progresso e proximas conquistas, somente leitura */
+.trophyNext{margin:0 0 20px;padding:16px;border:1px solid #6d5931;border-radius:14px;background:#17150f}.trophyNext>strong{display:block;color:#e6c56e;font-size:12px;letter-spacing:1.2px;margin-bottom:13px}.trophyNextItem{padding:10px 0;border-top:1px solid #ffffff16;display:grid;grid-template-columns:1fr auto;gap:6px 10px}.trophyNextItem b{font-size:13px}.trophyNextItem span{font-size:11px;color:#c8c0af;text-align:right}.trophyMiniBar{height:5px;background:#303030;border-radius:20px;overflow:hidden;grid-column:1/-1;margin-top:5px;width:100%}.trophyMiniBar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#ae852d,#f0d17a)}.trophyCounter{display:block;margin-top:10px;color:#d7b96d;font-size:11px;line-height:1.4}.trophyGrid article .trophyMiniBar{margin-top:9px}.trophyComplete{color:#dfc477;text-align:center}@media(max-width:420px){.trophyNextItem{grid-template-columns:1fr}.trophyNextItem span{text-align:left}}
