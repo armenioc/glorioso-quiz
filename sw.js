@@ -1,18 +1,6 @@
-const CACHE='glorioso-v473-20261015';
-const ASSETS=['/','/index.html','/style.css?v=473','/app.js?v=473','/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('glorioso-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin) return;
-  if(e.request.mode==='navigate'){
-    e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{
-      if(r&&r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put('/index.html',copy));}
-      return r;
-    }).catch(()=>caches.match('/index.html')));
-    return;
-  }
-  e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{
-    if(r&&r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}
-    return r;
-  }).catch(()=>caches.match(e.request).then(r=>r||caches.match(new URL(e.request.url).pathname))));
-});
+const CACHE='glorioso-v500-20261018';
+const CORE=['/','/index.html','/style.css?v=500','/app.js?v=500'];
+const EXTRA=['/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png'];
+self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE);await Promise.all(EXTRA.map(async url=>{try{await cache.add(url)}catch(e){console.warn('Optional offline asset:',url)}}));await self.skipWaiting()})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('glorioso-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));
+self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;if(req.mode==='navigate'){event.respondWith(fetch(req,{cache:'no-store'}).then(async res=>{if(res.ok){const cache=await caches.open(CACHE);await cache.put('/index.html',res.clone())}return res}).catch(async()=>await caches.match('/index.html')||Response.error()));return}event.respondWith(fetch(req).then(async res=>{if(res.ok){const cache=await caches.open(CACHE);await cache.put(req,res.clone())}return res}).catch(async()=>await caches.match(req)||await caches.match(new URL(req.url).pathname)||Response.error()))});

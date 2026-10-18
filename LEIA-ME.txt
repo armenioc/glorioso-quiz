@@ -1,0 +1,11 @@
+GLORIOSO QUIZ V5.0 — pacote candidato final
+
+1. Exporte um backup do progresso na versão atual antes de publicar.
+2. Publique TODOS os arquivos e a pasta icons mantendo os caminhos.
+3. Atualize a página e confira V5.0.
+4. Teste jogar, salvar, importar backup, desafios e navegação.
+5. Se houver cache antigo, feche e reabra o navegador.
+
+Mudanças: versão unificada, manifesto e ícones incluídos, cache offline robusto e metadados de exportação corrigidos.
+O progresso local existente não é apagado.
+Não houve validação funcional completa em navegador nesta execução.
