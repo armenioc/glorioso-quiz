@@ -1,5 +1,5 @@
-const CACHE='glorioso-v500-20261018';
-const CORE=['/','/index.html','/style.css?v=500','/app.js?v=500'];
+const CACHE='glorioso-v510-20261018';
+const CORE=['/','/index.html','/style.css?v=510','/app.js?v=510'];
 const EXTRA=['/manifest.webmanifest','/icons/icon-192.png','/icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE);await Promise.all(EXTRA.map(async url=>{try{await cache.add(url)}catch(e){console.warn('Optional offline asset:',url)}}));await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('glorioso-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()));

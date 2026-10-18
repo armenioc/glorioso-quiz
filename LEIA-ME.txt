@@ -1,11 +1,10 @@
-GLORIOSO QUIZ V5.0 — pacote candidato final
+GLORIOSO QUIZ V5.1 — atualização de segurança e validação
 
-1. Exporte um backup do progresso na versão atual antes de publicar.
-2. Publique TODOS os arquivos e a pasta icons mantendo os caminhos.
-3. Atualize a página e confira V5.0.
-4. Teste jogar, salvar, importar backup, desafios e navegação.
-5. Se houver cache antigo, feche e reabra o navegador.
+Publique TODOS os arquivos e a pasta icons no Cloudflare.
+Antes da atualização, exporte o progresso. Não limpe os dados do navegador.
 
-Mudanças: versão unificada, manifesto e ícones incluídos, cache offline robusto e metadados de exportação corrigidos.
-O progresso local existente não é apagado.
-Não houve validação funcional completa em navegador nesta execução.
+Mudanças: prévia dos dados antes da importação; validação do formato de backup; limite de 2 MB; cache offline versionado; versão identificada em tela e no JSON.
+
+A importação foi mantida compatível com os backups V5.0. Teste em outro navegador antes de usar no perfil principal.
+
+Atenção: teste de sintaxe não substitui teste de navegação, offline e restauração no dispositivo.
